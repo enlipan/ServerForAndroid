@@ -9,10 +9,6 @@ def printDBVersion(db):
     cursor.close()
 
 
-if __name__ == '__main__':
-    db = MySQLdb.connect("localhost","root","","pauldatas")
-    printDBVersion(db)
-
 
 def createTables(db):
     sql = """CREATE TABLE STUDENT (
@@ -20,7 +16,7 @@ def createTables(db):
          LAST_NAME  CHAR(20),
          AGE INT,
          SEX CHAR(1),
-         INCOME FLOAT )"""
+         GRADE INT )"""
     cursor = db.cursor()
     try:
         cursor.execute(sql)
@@ -29,3 +25,24 @@ def createTables(db):
         db.rollback()
     finally:
         cursor.close()
+
+def insertData(db):
+    sql = """INSERT INTO STUDENT(FIRST_NAME,
+         LAST_NAME, AGE, SEX, GRADE)
+         VALUES ('Mac', 'Mohan', 15, 'M', 9)"""
+    cursor = db.cursor()
+    try:
+        cursor.execute(sql)
+        db.commit()
+    except:
+        db.rollback()
+    finally:
+        cursor.close()
+
+
+if __name__ == '__main__':
+    db = MySQLdb.connect("localhost","root","","pauldatas")
+    printDBVersion(db)
+    createTables(db)
+    insertData(db)
+
