@@ -1,0 +1,62 @@
+{
+  "code": "200",
+  "data": {
+    "currentIndex": 1,
+    "items": [
+      {
+        "assessByMe": false,
+        "assessPrice": null,
+        "assessResult": null,
+        "assessorName": null,
+        "colorNameAlias": null,
+        "createTime": 1480474360000,
+        "detailUrl": "http://f2e-assets.souche.com/cheniu/detail/car_source?id=0ef936ac-b6a8-11e6-87ff-00163e004b3f",
+        "evalEvaluatorId": "",
+        "id": "0ef936ac-b6a8-11e6-87ff-00163e004b3f",
+        "innerColorNameAlias": null,
+        "mile": "3.50",
+        "myStore": false,
+        "name": "比亚迪2012款  比亚迪F0  1.0L 悦酷型",
+        "orderByMe": false,
+        "orderOnlineNums": null,
+        "orderPrice": null,
+        "picUrl": "http://img.souche.com/thirdimg/aHR0cDovLzJzYzIuYXV0b2ltZy5jbi9lc2NpbWcvZzE2L00xMC9CMy84Ri9mX3VfYXV0b2hvbWVjYXJfX3dLZ0g1bGctTzVXQVYyMzRBQUhIMzdIcm9pYzQ2MC5qcGc=",
+        "plateTime": "2013年12月",
+        "price": "2.38",
+        "purchasePrice": null,
+        "saledTime": 1480474431,
+        "salerName": null,
+        "salesId": "",
+        "sellType": null,
+        "shareTimes": "0",
+        "soucheNumber": "",
+        "source": "cheniu",
+        "status": "在售已上架",
+        "stayDay": null,
+        "store": "15203776543",
+        "storeFullName": "车牛",
+        "storeName": "车牛",
+        "synchonousStr": "未开始同步",
+        "tags": [
+          "在售已上架",
+          "库龄0天"
+        ],
+        "userDefinedStatus": null,
+        "userDefinedStatusName": null,
+        "userDefinedStatusRemark": null,
+        "viewTimes": "0",
+        "vin": "",
+        "visitTimeStamp": null,
+        "visitTimeStr": null,
+        "warrantyPurchaseDate": -1
+      }
+    ],
+    "nextIndex": 2,
+    "pageSize": 10,
+    "preIndex": 0,
+    "totalNumber": 18663,
+    "totalPage": 1867
+  },
+  "msg": "获取数据成功",
+  "success": true
+}
