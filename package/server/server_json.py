@@ -1,4 +1,4 @@
-#coding=utf-8
+# coding=utf-8
 
 from BaseHTTPServer import BaseHTTPRequestHandler,HTTPServer
 import cgi
