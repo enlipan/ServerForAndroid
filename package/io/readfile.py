@@ -3,7 +3,7 @@ import json
 from pprint import pprint
 
 from package.server import *
-from package.server.server_json import  getNetworkIp
+from package.server.server_json import  getIPAddress
 
 """
 __init__.py  组织package内部 Module
