@@ -18,6 +18,6 @@ cars2 = [car * 2 for car in cars]
 #     return f(x) + f(y)
 # print add(-1, 1, abs)
 
+# def f_2(x):
+#     return x**2
 
-def f_2(x):
-    return x**2
