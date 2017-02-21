@@ -9,6 +9,7 @@ import re
 
 PORT_NUMBER = 8989
 API_REGULAR = '/app/assess/assessaction/getCarRemindListV3.json'
+FILE_NAME = 'content_order_leasing.json'
 
 
 class JsonHandler(BaseHTTPRequestHandler):
@@ -41,7 +42,7 @@ def getIPAddress():
 
 def getJsonStr():
     try:
-        with open(os.path.join(os.path.dirname(__file__) + '/../file/content_car_file.json'), 'r') as open_file:
+        with open(os.path.join(os.path.dirname(__file__) + '/../file/' + FILE_NAME), 'r') as open_file:
             message = open_file.read()
             # json.dumps()
             # json.loads()

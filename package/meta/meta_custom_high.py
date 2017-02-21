@@ -8,6 +8,7 @@
 
 
 type 定义创建类的类，也是一个类，类似 'str','int'
+
 """
 
 class UpperAttrMetaClass(type):
