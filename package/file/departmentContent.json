@@ -1,0 +1,33 @@
+{
+  "code": "200",
+  "data": {
+    "data": {
+      "list": [
+        {
+          "id": "1",
+          "name": "标致",
+          "shopCode": "000055",
+          "sort": "3",
+          "parentId": "1"
+        },
+        {
+          "id": "1",
+          "name": "标致",
+          "shopCode": "000055",
+          "sort": "3",
+          "parentId": "1"
+        },
+        {
+          "id": "1",
+          "name": "标致",
+          "shopCode": "000055",
+          "sort": "3",
+          "parentId": "1"
+        }
+      ],
+      "total": 3
+    }
+  },
+  "msg": "获取数据成功",
+  "success": true
+}

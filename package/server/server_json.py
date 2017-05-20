@@ -7,9 +7,9 @@ import io
 import os
 import re
 
-PORT_NUMBER = 8989
-API_REGULAR = '/app/assess/assessaction/getCarRemindListV3.json'
-FILE_NAME = 'content_order_leasing.json'
+PORT_NUMBER = 9090
+API_REGULAR = '/api/departmentapi/getselectDepartments.json'
+FILE_NAME = 'selectJobList.json'
 
 
 class JsonHandler(BaseHTTPRequestHandler):

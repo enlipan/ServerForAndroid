@@ -1,0 +1,74 @@
+{
+  "code": "200",
+  "data": {
+    "data": {
+      "list": [
+        {
+          "id": "1",
+          "name": "管理类",
+          "canBeSelect": true,
+          "sort": "3",
+          "parentId": ""
+        },
+        {
+          "id": "1",
+          "name": "集团管理层",
+          "shopCode": "000055",
+          "canBeSelect": true,
+          "sort": "3",
+          "parentId": ""
+        },
+        {
+          "id": "1111",
+          "name": "集团管理一部",
+          "shopCode": "000052",
+          "canBeSelect": true,
+          "sort": "3",
+          "parentId": ""
+        },
+        {
+          "id": "2222",
+          "name": "销售类",
+          "canBeSelect": false,
+          "sort": "5",
+          "parentId": ""
+        },
+        {
+          "id": "2222",
+          "name": "销售部",
+          "canBeSelect": false,
+          "shopCode": "0000515",
+          "sort": "5",
+          "parentId": ""
+        },
+        {
+          "id": "2222",
+          "name": "销售一部",
+          "canBeSelect": true,
+          "shopCode": "0000535",
+          "sort": "5",
+          "parentId": "222"
+        },
+        {
+          "id": "2222",
+          "name": "销售二部",
+          "canBeSelect": true,
+          "shopCode": "0004055",
+          "sort": "5",
+          "parentId": "222"
+        },
+        {
+          "id": "2222",
+          "name": "销售三部",
+          "canBeSelect": true,
+          "shopCode": "0005055",
+          "sort": "5",
+          "parentId": "222"
+        }
+      ],
+      "total": 8
+    }
+  },
+  "msg": "获取数据成功",
+  "success": true
+}
