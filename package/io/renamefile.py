@@ -9,39 +9,39 @@ def rename(path):
             if "fengche" in filename:
                 print filename
                 os.rename(os.path.join(path, filename),
-                          os.path.join(path, filename[filename.find("fengche"): len("fengche")] + file_name_suf))
+                          os.path.join(path, filename[filename.find("fengche"): len("fengche") + 1] + file_name_suf))
             elif "chebaba" in filename:
                 print filename
                 os.rename(os.path.join(path, filename),
-                          os.path.join(path, filename[filename.find("chebaba"): len("chebaba")] + file_name_suf))
+                          os.path.join(path, filename[filename.find("chebaba"): len("chebaba") + 1] + file_name_suf))
             elif "jiehe" in filename:
                 print filename
                 os.rename(os.path.join(path, filename),
-                          os.path.join(path, filename[filename.find("jiehe"): len("jiehe")] + file_name_suf))
+                          os.path.join(path, filename[filename.find("jiehe"): len("jiehe") + 1] + file_name_suf))
             elif "fanglin" in filename:
                 print filename
-                os.rename(os.path.join(path, filename), os.path.join(path, filename[filename.find("fanglin"): len(
-                    "fanglin")] + file_name_suf))
+                os.rename(os.path.join(path, filename),
+                          os.path.join(path, filename[filename.find("fanglin"): len("fanglin") + 1] + file_name_suf))
             elif "shenlong" in filename:
                 print filename
                 os.rename(os.path.join(path, filename),
-                          os.path.join(path, filename[filename.find("shenlong"): len("shenlong")] + file_name_suf))
+                          os.path.join(path, filename[filename.find("shenlong"): len("shenlong") + 1] + file_name_suf))
             elif "cadillac" in filename:
                 print filename
                 os.rename(os.path.join(path, filename),
-                          os.path.join(path, filename[filename.find("cadillac"): len("cadillac")] + file_name_suf))
+                          os.path.join(path, filename[filename.find("cadillac"): len("cadillac") + 1] + file_name_suf))
             elif "msld" in filename:
                 print filename
                 os.rename(os.path.join(path, filename),
-                          os.path.join(path, filename[filename.find("msld"): len("msld")] + file_name_suf))
+                          os.path.join(path, filename[filename.find("msld"): len("msld") + 1] + file_name_suf))
             elif "shangqi" in filename:
                 print filename
                 os.rename(os.path.join(path, filename),
-                          os.path.join(path, filename[filename.find("shangqi"): len("shangqi")] + file_name_suf))
+                          os.path.join(path, filename[filename.find("shangqi"): len("shangqi") + 1] + file_name_suf))
             elif "yingche" in filename:
                 print filename
                 os.rename(os.path.join(path, filename),
-                          os.path.join(path, filename[filename.find("yingche"): len("yingche")] + file_name_suf))
+                          os.path.join(path, filename[filename.find("yingche"): len("yingche") + 1] + file_name_suf))
             else:
                 print filename + ' not recognize ... '
 
