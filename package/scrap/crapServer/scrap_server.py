@@ -6,6 +6,13 @@ import requests
 import json
 import time
 
+# 1. fetch root_api_doc
+# 2. get root api infos and write to json file
+# 3. from root api infos get every api_path
+# 4, get api_path url info and write to child json file
+# 5, format child json file and write to format file
+
+
 # python test.py  arg1 arg2
 # Accept:application/json;charset=utf-8,*/*
 # Accept-Encoding:gzip, deflate
@@ -69,12 +76,33 @@ def fetch_domain_url(request_ulr):
         '_': time.time() * 1000
     }
     response = requests.get(request_ulr, params=params, headers=headers, cookies=cookies)
+    return response
+
+
+def save_res_info(response):
     from pprint import pprint
     pprint(response.headers)
     pprint(response.encoding)
     pprint(type(response.text))
     file_path = make_file_path(request_ulr)
     write_info_to_file(response.text, file_path)
+
+
+def make_root_doc_path():
+    root_doc_path = os.path.join(os.path.abspath('.'), 'output/output_global_api.json')
+    if not os.path.exists(os.path.dirname(root_doc_path)):
+        os.mkdir(os.path.dirname(root_doc_path))
+    return root_doc_path
+
+
+def read_root_api_info():
+    rootApiInfo = {}
+    for index, item in enumerate(rootApiInfo['apis']):
+        print
+        item['path']
+        print
+        item['description']
+    rootApiInfo['info']['description']
 
 
 def fetch_with_session(request_url):
@@ -87,5 +115,6 @@ def fetch_with_ssl(request__https_url):
 
 
 if __name__ == '__main__':
-    print str(sys.argv)
+    print
+    str(sys.argv)
     fetch_domain_url(server_url_info)
