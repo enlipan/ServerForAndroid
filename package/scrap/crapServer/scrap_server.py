@@ -1,7 +1,9 @@
 # -*- coding: UTF-8 -*-
 import os
-import sys, getopt
+import sys
+import getopt
 import requests
+import json
 
 # python test.py  arg1 arg2
 # Accept:application/json;charset=utf-8,*/*
@@ -15,10 +17,10 @@ import requests
 # TT:
 # User-Agent:Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.86 Mobile Safari/537.36
 # X-Requested-With:XMLHttpRequest
-server_url = 'http://erp-dev2.sqaproxy.souche.com/api-docs/souche/app-car-info?_=1498029958834'
+# server_url = 'http://erp-dev2.sqaproxy.souche.com/api-docs/souche/app-car-info?_=1498029958834'
+server_url = 'http://erp-dev2.sqaproxy.souche.com/api-docs'
 
 
-# server_url = 'http://erp-dev2.sqaproxy.souche.com/api-docs'
 # + _:1498029958833 unix 时间戳
 
 
@@ -50,7 +52,12 @@ def fetch_domain_url(request_ulr):
     pprint(response.headers)
     pprint(response.encoding)
     pprint(type(response.text))
-    pprint(response.text)
+    open_path = os.path.join(os.path.abspath('.'), 'output/output.txt')
+    reload(sys)
+    sys.setdefaultencoding('utf-8')
+    with open(open_path, 'w') as of:
+        # unicode(info).encode('utf-8') 将unicode使用 utf-8编码处理中文字符
+        print >> of, response.text.encode('utf-8')
 
 
 def fetch_with_session(request_url):
