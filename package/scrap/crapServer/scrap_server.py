@@ -26,6 +26,21 @@ server_url_info = server_url + '/souche/app-car-info'
 # /souche/app-car-action
 # + _:1498029958833 unix 时间戳
 
+def make_file_path(request_ulr):
+    import urlparse
+    urlparse.urlparse(request_ulr)
+    open_path = os.path.join(os.path.abspath('.'), 'output' + urlparse.urlparse(request_ulr).path)
+    if not os.path.exists(open_path):
+        os.makedirs(open_path)
+    return open_path + '/output.json'
+
+
+def write_info_to_file(res_text, file_path):
+    reload(sys)
+    sys.setdefaultencoding('utf-8')
+    with open(file_path, 'w') as of:
+        # unicode(info).encode('utf-8') 将unicode使用 utf-8编码处理中文字符
+        print >> of, res_text.encode('utf-8')
 
 
 def fetch_domain_url(request_ulr):
@@ -58,12 +73,8 @@ def fetch_domain_url(request_ulr):
     pprint(response.headers)
     pprint(response.encoding)
     pprint(type(response.text))
-    open_path = os.path.join(os.path.abspath('.'), 'output/output.json')
-    reload(sys)
-    sys.setdefaultencoding('utf-8')
-    with open(open_path, 'w') as of:
-        # unicode(info).encode('utf-8') 将unicode使用 utf-8编码处理中文字符
-        print >> of, response.text.encode('utf-8')
+    file_path = make_file_path(request_ulr)
+    write_info_to_file(response.text, file_path)
 
 
 def fetch_with_session(request_url):
