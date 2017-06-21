@@ -26,13 +26,14 @@ server_url_info = server_url + '/souche/app-car-info'
 # /souche/app-car-action
 # + _:1498029958833 unix 时间戳
 
+
 def make_file_path(request_ulr):
     import urlparse
     urlparse.urlparse(request_ulr)
     open_path = os.path.join(os.path.abspath('.'), 'output' + urlparse.urlparse(request_ulr).path)
     if not os.path.exists(open_path):
         os.makedirs(open_path)
-    return open_path + '/output.json'
+    return open_path + '/res_output.json'
 
 
 def write_info_to_file(res_text, file_path):
@@ -43,8 +44,31 @@ def write_info_to_file(res_text, file_path):
         print >> of, res_text.encode('utf-8')
 
 
+def append_info_to_file(format_file_path, info):
+    print format_file_path
+    with open(format_file_path, 'a') as of:
+        print info
+        print >> of, info.encode('utf-8')
+
+
+# 读取生成的接口JsonFile 生成对应格式的Info
+# 订单中心 001 取消订单 /app/car/appcarsearchaction
+def read_and_generate_format_file(file_path):
+    format_file_path = os.path.join(os.path.dirname(file_path), 'format_output.json')
+    if os.path.exists(file_path):
+        with open(file_path) as json_data:
+            jsonInfo = json.load(json_data)
+            if len(jsonInfo['apis']) > 0:
+                for index, jsonItem in enumerate(jsonInfo['apis']):
+                    str_path = jsonItem['path']
+                    print "str_path:------------------", str_path
+                    append_info_to_file(format_file_path,
+                                        str(index + 1) + '   ' + jsonItem['operations'][0]['summary'] + '   ' +
+                                        jsonItem['description'] + '  ' + jsonItem['path'])
+
+
 def fetch_domain_url(request_ulr):
-    cookies = {'_security_token': '1Lors_lTwr91t2Bi',
+    cookies = {'_security_token': '11bH5_lTwr91t2Bi',
                'sgsa_id': 'souche.com|1477308440052807',
                'gr_user_id': '325c2771-20de-439f-b60d-73948efcb5a4',
                'channel': 'website',
@@ -74,7 +98,9 @@ def fetch_domain_url(request_ulr):
     pprint(response.encoding)
     pprint(type(response.text))
     file_path = make_file_path(request_ulr)
-    write_info_to_file(response.text, file_path)
+    print file_path
+    # write_info_to_file(response.text, file_path)
+    # read_and_generate_format_file(file_path)
 
 
 def fetch_with_session(request_url):
@@ -88,4 +114,5 @@ def fetch_with_ssl(request__https_url):
 
 if __name__ == '__main__':
     print str(sys.argv)
-    fetch_domain_url(server_url_info)
+    read_and_generate_format_file(
+        '/Users/paul/Documents/Paul/PythonDemo/package/scrap/crapServer/output/api-docs/souche/app-car-info/res_output.json')
