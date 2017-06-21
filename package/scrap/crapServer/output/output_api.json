@@ -1,0 +1,342 @@
+{
+  "apiVersion": "1",
+  "apis": [
+    {
+      "description": "车辆操作",
+      "path": "/souche/app-car-action",
+      "position": 0
+    },
+    {
+      "description": "车辆信息",
+      "path": "/souche/app-car-info",
+      "position": 0
+    },
+    {
+      "description": "app车辆信息",
+      "path": "/souche/app-car-list",
+      "position": 0
+    },
+    {
+      "description": "车辆详情",
+      "path": "/souche/app-newcar-detail",
+      "position": 0
+    },
+    {
+      "description": "车辆代销操作",
+      "path": "/souche/app-newcar-operate",
+      "position": 0
+    },
+    {
+      "description": "车辆库存搜索",
+      "path": "/souche/app-newcar-search",
+      "position": 0
+    },
+    {
+      "description": "评估师",
+      "path": "/souche/assess",
+      "position": 0
+    },
+    {
+      "description": "车辆评估",
+      "path": "/souche/car-assess",
+      "position": 0
+    },
+    {
+      "description": "车辆审批",
+      "path": "/souche/car-audit",
+      "position": 0
+    },
+    {
+      "description": "车辆品牌",
+      "path": "/souche/car-brand",
+      "position": 0
+    },
+    {
+      "description": "车辆统计信息",
+      "path": "/souche/car-data-info",
+      "position": 0
+    },
+    {
+      "description": "车辆详情页",
+      "path": "/souche/car-detail",
+      "position": 0
+    },
+    {
+      "description": "车辆检测",
+      "path": "/souche/car-detection",
+      "position": 0
+    },
+    {
+      "description": "定价助手",
+      "path": "/souche/car-estimate-price",
+      "position": 0
+    },
+    {
+      "description": "车辆导入",
+      "path": "/souche/car-import",
+      "position": 0
+    },
+    {
+      "description": "车辆保养",
+      "path": "/souche/car-maintenancerecord",
+      "position": 0
+    },
+    {
+      "description": "车辆管理",
+      "path": "/souche/car-manage",
+      "position": 0
+    },
+    {
+      "description": "车辆车型",
+      "path": "/souche/car-model",
+      "position": 0
+    },
+    {
+      "description": "车型匹配",
+      "path": "/souche/car-model-match",
+      "position": 0
+    },
+    {
+      "description": "查找车辆订单",
+      "path": "/souche/car-order",
+      "position": 0
+    },
+    {
+      "description": "车辆销售信息",
+      "path": "/souche/car-orderinfo",
+      "position": 0
+    },
+    {
+      "description": "图片导出",
+      "path": "/souche/car-picture-export",
+      "position": 0
+    },
+    {
+      "description": "车辆平台数据",
+      "path": "/souche/car-platform-data",
+      "position": 0
+    },
+    {
+      "description": "车辆价格管理",
+      "path": "/souche/car-price",
+      "position": 0
+    },
+    {
+      "description": "车辆价格日志",
+      "path": "/souche/car-price-log",
+      "position": 0
+    },
+    {
+      "description": "下载价签",
+      "path": "/souche/car-price-tag",
+      "position": 0
+    },
+    {
+      "description": "车牛车辆触发同步，***仅限车牛使用****",
+      "path": "/souche/car-push-for-cheniu",
+      "position": 0
+    },
+    {
+      "description": "车辆二维码",
+      "path": "/souche/car-qrcode",
+      "position": 0
+    },
+    {
+      "description": "车辆质保联盟",
+      "path": "/souche/car-qualityassurance",
+      "position": 0
+    },
+    {
+      "description": "车辆整备页",
+      "path": "/souche/car-reorganize",
+      "position": 0
+    },
+    {
+      "description": "车辆整备页V2",
+      "path": "/souche/car-reorganize-v2",
+      "position": 0
+    },
+    {
+      "description": "车辆搜索",
+      "path": "/souche/car-search",
+      "position": 0
+    },
+    {
+      "description": "库存建议",
+      "path": "/souche/car-stock-advise",
+      "position": 0
+    },
+    {
+      "description": "车辆库存操作",
+      "path": "/souche/car-stock-operate",
+      "position": 0
+    },
+    {
+      "description": "库存预警",
+      "path": "/souche/car-stock-warning",
+      "position": 0
+    },
+    {
+      "description": "车辆转场",
+      "path": "/souche/car-switchshop",
+      "position": 0
+    },
+    {
+      "description": "车辆零售转拍卖",
+      "path": "/souche/car-switchtoauction",
+      "position": 0
+    },
+    {
+      "description": "销售榜",
+      "path": "/souche/car-top-sale",
+      "position": 0
+    },
+    {
+      "description": "车辆过户信息",
+      "path": "/souche/car-transferinfo",
+      "position": 0
+    },
+    {
+      "description": "车牛车辆管理",
+      "path": "/souche/cheniu-car-manage-action",
+      "position": 0
+    },
+    {
+      "description": "车牛定价助手",
+      "path": "/souche/cheniu-estimate-price",
+      "position": 0
+    },
+    {
+      "description": "数据中心",
+      "path": "/souche/data-center",
+      "position": 0
+    },
+    {
+      "description": "数据订正",
+      "path": "/souche/data-fix-pc",
+      "position": 0
+    },
+    {
+      "description": "数据订正Test",
+      "path": "/souche/data-fix-test",
+      "position": 0
+    },
+    {
+      "description": "获取平台爬取车辆信息",
+      "path": "/souche/data-market",
+      "position": 0
+    },
+    {
+      "description": "字典管理",
+      "path": "/souche/dictionary",
+      "position": 0
+    },
+    {
+      "description": "第三方平台配置信息",
+      "path": "/souche/erpexternalconfigaction",
+      "position": 0
+    },
+    {
+      "description": "导出进度",
+      "path": "/souche/export-progress",
+      "position": 0
+    },
+    {
+      "description": "发送心跳",
+      "path": "/souche/heart-beat",
+      "position": 0
+    },
+    {
+      "description": "多平台账号管理",
+      "path": "/souche/multi-platform-account-manager",
+      "position": 0
+    },
+    {
+      "description": "开放评估assessinfonew中的一些信息",
+      "path": "/souche/openapi,assessinfonew",
+      "position": 0
+    },
+    {
+      "description": "车辆搜索",
+      "path": "/souche/openapi,car-search",
+      "position": 0
+    },
+    {
+      "description": "车辆基本操作",
+      "path": "/souche/openapi,caraction",
+      "position": 0
+    },
+    {
+      "description": "查找车辆订单状态",
+      "path": "/souche/order-action",
+      "position": 0
+    },
+    {
+      "description": "车辆图片",
+      "path": "/souche/pc-car-picture",
+      "position": 0
+    },
+    {
+      "description": "车辆保存更新",
+      "path": "/souche/pc-car-save-update",
+      "position": 0
+    },
+    {
+      "description": "平台账号管理",
+      "path": "/souche/platform-accounts-manage",
+      "position": 0
+    },
+    {
+      "description": "店铺管理",
+      "path": "/souche/shop",
+      "position": 0
+    },
+    {
+      "description": "swagger文档导出",
+      "path": "/souche/swagger-export",
+      "position": 0
+    },
+    {
+      "description": "车辆同步管理",
+      "path": "/souche/synchronization-manage",
+      "position": 0
+    },
+    {
+      "description": "车辆同步",
+      "path": "/souche/synchronous-manage",
+      "position": 0
+    },
+    {
+      "description": "台账导出",
+      "path": "/souche/taizhang-export",
+      "position": 0
+    },
+    {
+      "description": "弹弹弹了个车...",
+      "path": "/souche/tangecheaction",
+      "position": 0
+    },
+    {
+      "description": "淘宝车辆同步",
+      "path": "/souche/taobao-car",
+      "position": 0
+    },
+    {
+      "description": "用户管理",
+      "path": "/souche/user",
+      "position": 0
+    },
+    {
+      "description": "批售管理",
+      "path": "/souche/wholesale-manage-action",
+      "position": 0
+    }
+  ],
+  "authorizations": {},
+  "info": {
+    "description": "ERP-API",
+    "termsOfServiceUrl": "http://localhost:8080/api-docs",
+    "title": "souche-erp-api"
+  },
+  "swaggerVersion": "1.2"
+}

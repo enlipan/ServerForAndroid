@@ -4,6 +4,7 @@ import sys
 import getopt
 import requests
 import json
+import time
 
 # python test.py  arg1 arg2
 # Accept:application/json;charset=utf-8,*/*
@@ -19,8 +20,10 @@ import json
 # X-Requested-With:XMLHttpRequest
 # server_url = 'http://erp-dev2.sqaproxy.souche.com/api-docs/souche/app-car-info?_=1498029958834'
 server_url = 'http://erp-dev2.sqaproxy.souche.com/api-docs'
+server_url_info = server_url + '/souche/app-car-info'
 
 
+# /souche/app-car-action
 # + _:1498029958833 unix 时间戳
 
 
@@ -47,12 +50,15 @@ def fetch_domain_url(request_ulr):
                'Host': 'erp-dev2.sqaproxy.souche.com',
                'Referer': 'http://erp-dev2.sqaproxy.souche.com/api'
                }
-    response = requests.get(request_ulr, headers=headers, cookies=cookies)
+    params = {
+        '_': time.time() * 1000
+    }
+    response = requests.get(request_ulr, params=params, headers=headers, cookies=cookies)
     from pprint import pprint
     pprint(response.headers)
     pprint(response.encoding)
     pprint(type(response.text))
-    open_path = os.path.join(os.path.abspath('.'), 'output/output.txt')
+    open_path = os.path.join(os.path.abspath('.'), 'output/output.json')
     reload(sys)
     sys.setdefaultencoding('utf-8')
     with open(open_path, 'w') as of:
@@ -70,6 +76,5 @@ def fetch_with_ssl(request__https_url):
 
 
 if __name__ == '__main__':
-    print "Hello"
     print str(sys.argv)
-    fetch_domain_url(server_url)
+    fetch_domain_url(server_url_info)
