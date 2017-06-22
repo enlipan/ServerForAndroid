@@ -27,9 +27,8 @@ import time
 # X-Requested-With:XMLHttpRequest
 # server_url = 'http://erp-dev2.sqaproxy.souche.com/api-docs/souche/app-car-info?_=1498029958834'
 server_url = 'http://erp-dev2.sqaproxy.souche.com/api-docs'
-server_url_info = server_url + '/souche/app-car-info'
-
-
+infoDict={}
+# server_url_info = server_url + '/souche/app-car-info'
 # /souche/app-car-action
 # + _:1498029958833 unix 时间戳
 
@@ -52,9 +51,10 @@ def write_info_to_file(res_text, file_path):
 
 
 def append_info_to_file(format_file_path, info):
-    print format_file_path
+    # print format_file_path
     with open(format_file_path, 'a') as of:
-        print info
+        # print info
+        # unicode.encode('utf-8')
         print >> of, info.encode('utf-8')
 
 
@@ -67,15 +67,28 @@ def read_and_generate_format_file(file_path):
             jsonInfo = json.load(json_data)
             if len(jsonInfo['apis']) > 0:
                 for index, jsonItem in enumerate(jsonInfo['apis']):
-                    str_path = jsonItem['path']
-                    print "str_path:------------------", str_path
-                    append_info_to_file(format_file_path,
-                                        str(index + 1) + '   ' + jsonItem['operations'][0]['summary'] + '   ' +
-                                        jsonItem['description'] + '  ' + jsonItem['path'])
+                    append_info_to_file(
+                                        format_file_path,
+                                        infoDict['rootDescription']
+                                        + '  '
+                                        + infoDict['itemDescription']
+                                        + '  '
+                                        + '{num:03d}'.format(num=index + 1)
+                                        + '  '
+                                        + '{:<25}  {:<50}'.format(jsonItem['operations'][0]['summary'], jsonItem['description'])
+                                        + jsonItem['path']
+                                        )
+
+
+def read_root_api_doc_info(root_file_path):
+    if os.path.exists(root_file_path):
+        with open(root_file_path) as json_data:
+            rootJsonInfo = json.load(json_data)
+            return rootJsonInfo
 
 
 def fetch_domain_url(request_ulr):
-    cookies = {'_security_token': '11bH5_lTwr91t2Bi',
+    cookies = {'_security_token': '1r5VS_lTwr91t2Bi',
                'sgsa_id': 'souche.com|1477308440052807',
                'gr_user_id': '325c2771-20de-439f-b60d-73948efcb5a4',
                'channel': 'website',
@@ -104,14 +117,13 @@ def fetch_domain_url(request_ulr):
 
 
 def save_res_info(response):
-    from pprint import pprint
-    pprint(response.headers)
-    pprint(response.encoding)
-    pprint(type(response.text))
-    file_path = make_file_path(request_ulr)
-    print file_path
-    # write_info_to_file(response.text, file_path)
-    # read_and_generate_format_file(file_path)
+    # from pprint import pprint
+    # pprint(response.headers)
+    # pprint(response.encoding)
+    # pprint(type(response.text))
+    file_path = make_file_path(response.url)
+    write_info_to_file(response.text, file_path)
+    read_and_generate_format_file(file_path)
 
 
 def make_root_doc_path():
@@ -121,14 +133,22 @@ def make_root_doc_path():
     return root_doc_path
 
 
+def save_root_api_info(response):
+    file_path = make_root_doc_path()
+    write_info_to_file(response.text, file_path)
+
+
 def read_root_api_info():
-    rootApiInfo = {}
+    rootApiInfo = read_root_api_doc_info(make_root_doc_path())
     for index, item in enumerate(rootApiInfo['apis']):
-        print
-        item['path']
-        print
-        item['description']
-    rootApiInfo['info']['description']
+        # ERP_API
+        infoDict['rootDescription'] = rootApiInfo['info']['description']
+        # 个人管理
+        infoDict['itemDescription'] = item['description']
+        print 'Output Info: From=> ',infoDict['rootDescription']
+        print 'Output Info: Name=> ',infoDict['itemDescription']
+        print 'Output Info: Url=> ',server_url + item['path']
+        save_res_info(fetch_domain_url(server_url + item['path']))
 
 
 def fetch_with_session(request_url):
@@ -142,5 +162,8 @@ def fetch_with_ssl(request__https_url):
 
 if __name__ == '__main__':
     print str(sys.argv)
-    read_and_generate_format_file(
-        '/Users/paul/Documents/Paul/PythonDemo/package/scrap/crapServer/output/api-docs/souche/app-car-info/res_output.json')
+    rootApiRes = fetch_domain_url(server_url)
+    save_root_api_info(rootApiRes)
+    read_root_api_info()
+
+
