@@ -58,6 +58,17 @@ def append_info_to_file(format_file_path, info):
         print >> of, info.encode('utf-8')
 
 
+
+def wide_chars(s):
+    from unicodedata import east_asian_width
+    """return the extra width for wide characters
+    ref: http://stackoverflow.com/a/23320535/1276501
+    ref: https://blog.tankywoo.com/2017/01/21/python-cli-chinese-align-and-encoding-continue.html"""
+    if isinstance(s, str):
+        s = s.decode('utf-8')
+    return sum(east_asian_width(x) in ('F', 'W') for x in s)
+
+
 # 读取生成的接口JsonFile 生成对应格式的Info
 # 订单中心 001 取消订单 /app/car/appcarsearchaction
 def read_and_generate_format_file(file_path):
