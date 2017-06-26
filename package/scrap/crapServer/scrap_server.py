@@ -99,7 +99,7 @@ def read_root_api_doc_info(root_file_path):
 
 
 def fetch_domain_url(request_ulr):
-    cookies = {'_security_token': '1r5VS_lTwr91t2Bi',
+    cookies = {'_security_token': '1PFCx_lTwr91t2Bi',
                'sgsa_id': 'souche.com|1477308440052807',
                'gr_user_id': '325c2771-20de-439f-b60d-73948efcb5a4',
                'channel': 'website',
